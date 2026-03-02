@@ -1,0 +1,13 @@
+<header class="site-header">
+  <nav>
+    <a href="{{ "/" | relURL }}" class="site-logo">
+      <span class="logo-knot">🪢</span><span class="logo-herb">🌿</span>
+      <span class="logo-text">The Untangling Collective</span>
+    </a>
+    <div class="nav-links">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} class="active"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,636 @@
+/* ═══════════════════════════════════════════════
+   The Untangling Collective — Dark Botanical Theme
+   Designed by Bramble 🌿
+   ═══════════════════════════════════════════════ */
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep:       #0a1410;
+  --bg-primary:    #0f1a14;
+  --bg-secondary:  #162019;
+  --bg-card:       #1a2a20;
+  --bg-card-hover: #1f3028;
+
+  --accent-plum:   #8b6178;
+  --accent-mauve:  #a37b91;
+  --accent-olive:  #5c6b3c;
+  --accent-sage:   #7a8a5c;
+  --accent-gold:   #c4a43a;
+  --accent-gold-dim: #9a8230;
+
+  --text-cream:    #ede6d6;
+  --text-soft:     #c8c0ae;
+  --text-muted:    #8a8272;
+  --text-dim:      #5a5548;
+
+  --font-display:  'Josefin Sans', sans-serif;
+  --font-body:     'Cormorant Garamond', Georgia, serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  --max-width:     960px;
+  --space-xs:      0.5rem;
+  --space-sm:      1rem;
+  --space-md:      2rem;
+  --space-lg:      4rem;
+  --space-xl:      6rem;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-cream);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  min-height: 100vh;
+  /* subtle grain texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+a {
+  color: var(--accent-mauve);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent-gold);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Navigation ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 20, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(92, 107, 60, 0.15);
+}
+
+.site-header nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-cream);
+  text-decoration: none;
+}
+
+.logo-knot, .logo-herb {
+  font-size: 1.2rem;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-gold);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: var(--space-xl) 1.5rem;
+  background: radial-gradient(ellipse at 30% 20%, rgba(92, 107, 60, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(139, 97, 120, 0.06) 0%, transparent 60%);
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.cover-art {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+              0 0 80px rgba(92, 107, 60, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cover-art:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.6),
+              0 0 100px rgba(139, 97, 120, 0.12);
+}
+
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 2.8rem;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  color: var(--text-cream);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-hosts {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.hero-hosts strong {
+  color: var(--text-soft);
+}
+
+/* ── Buttons ── */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent-plum);
+  color: var(--text-cream);
+}
+
+.btn-primary:hover {
+  background: var(--accent-mauve);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(139, 97, 120, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--text-dim);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent-gold-dim);
+  color: var(--accent-gold);
+}
+
+/* ── Sections ── */
+.section-inner,
+.page-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-gold-dim);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(196, 164, 58, 0.15);
+}
+
+.episodes-latest {
+  padding: var(--space-lg) 1.5rem;
+}
+
+/* ── Episode Grid ── */
+.episode-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.episode-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid rgba(92, 107, 60, 0.1);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.episode-card:hover {
+  border-color: rgba(139, 97, 120, 0.2);
+  background: var(--bg-card-hover);
+}
+
+.episode-art img {
+  border-radius: 6px;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.episode-info time {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.episode-info h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.episode-info h3 a {
+  color: var(--text-cream);
+}
+
+.episode-info h3 a:hover {
+  color: var(--accent-gold);
+}
+
+.episode-info p {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.listen-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-plum);
+}
+
+.listen-link:hover {
+  color: var(--accent-gold);
+}
+
+/* ── Single Page ── */
+.page-single {
+  padding: var(--space-lg) 1.5rem var(--space-xl);
+}
+
+.page-cover {
+  max-width: 300px;
+  margin-bottom: var(--space-md);
+}
+
+.page-cover img {
+  border-radius: 10px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 2.2rem;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  color: var(--text-cream);
+  margin-bottom: 0.5rem;
+}
+
+.page-desc {
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.page-header time {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.page-listen {
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.page-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.tag {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-sage);
+  background: rgba(92, 107, 60, 0.12);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(92, 107, 60, 0.2);
+}
+
+/* ── Prose (content) ── */
+.prose {
+  max-width: 680px;
+}
+
+.prose h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--text-cream);
+  margin: var(--space-md) 0 var(--space-sm);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(196, 164, 58, 0.1);
+}
+
+.prose h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-mauve);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1.2rem;
+  color: var(--text-soft);
+}
+
+.prose ul, .prose ol {
+  margin: 1rem 0 1.2rem 1.5rem;
+  color: var(--text-soft);
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.prose strong {
+  color: var(--text-cream);
+  font-weight: 600;
+}
+
+.prose em {
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--accent-plum);
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  background: rgba(139, 97, 120, 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+.prose blockquote p {
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-card);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: var(--accent-sage);
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid rgba(92, 107, 60, 0.15);
+  margin: var(--space-md) 0;
+}
+
+.prose a {
+  color: var(--accent-mauve);
+  text-decoration: underline;
+  text-decoration-color: rgba(163, 123, 145, 0.3);
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--accent-gold);
+  text-decoration-color: rgba(196, 164, 58, 0.4);
+}
+
+/* ── List Page ── */
+.page-list {
+  padding: var(--space-lg) 1.5rem var(--space-xl);
+}
+
+.page-list h1 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--text-cream);
+  margin-bottom: var(--space-sm);
+}
+
+.page-list > .page-inner > .page-desc {
+  color: var(--text-soft);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Footer ── */
+.site-footer {
+  padding: var(--space-lg) 1.5rem var(--space-md);
+  text-align: center;
+}
+
+.footer-vine {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.5em;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links a {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-sep {
+  color: var(--text-dim);
+  margin: 0 0.5rem;
+}
+
+.footer-tagline {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.footer-copy {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  html { font-size: 16px; }
+  
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--space-md);
+  }
+  
+  .hero-art {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .episode-card {
+    grid-template-columns: 100px 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+  }
+  
+  .site-header nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .logo-text {
+    font-size: 0.75rem;
+  }
+  
+  .page-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .episode-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .episode-art {
+    max-width: 200px;
+  }
+}
+
+/* ── Decorative accents ── */
+.hero::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 5% 95%, rgba(92, 107, 60, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 95% 5%, rgba(139, 97, 120, 0.03) 0%, transparent 40%);
+}

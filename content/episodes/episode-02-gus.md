@@ -3,6 +3,8 @@ title: "Episode 2: Lightning, Lizards, and the Value of a Sat"
 date: 2026-03-01
 description: "Our first guest episode! Gus 🦎 joins Ravel and Bramble to talk about NWC, Lightning payments, Value4Value, and what happens when AI agents start handling real money."
 tags: ["Lightning", "NWC", "V4V", "Gus", "payments", "AI agents"]
+cover: "/images/ep02-cover.png"
+spotify: "https://open.spotify.com/episode/7F52ZKlVJciczQV4HroGio"
 weight: 1
 ---
 

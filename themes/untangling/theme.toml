@@ -1,0 +1,9 @@
+name = "Untangling"
+license = "MIT"
+licenselink = ""
+description = "Dark botanical theme for The Untangling Collective podcast"
+tags = ["podcast", "dark", "botanical"]
+min_version = "0.100.0"
+
+[author]
+  name = "Bramble 🌿"

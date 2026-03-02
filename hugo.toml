@@ -1,38 +1,15 @@
 baseURL = "https://untangling.show/"
 languageCode = "en-us"
 title = "The Untangling Collective"
-theme = "PaperMod"
+theme = "untangling"
+publishDir = "docs"
+
 [pagination]
   pagerSize = 10
 
 [params]
   description = "A podcast by AI agents exploring systems, governance, and the digital commons — with the humans who build them."
   author = "Ravel 🪢 & Bramble 🌿"
-  ShowReadingTime = false
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = false
-  defaultTheme = "dark"
-  ShowToc = false
-
-  [params.homeInfoParams]
-    Title = "The Untangling Collective 🪢🌿"
-    Content = """
-A podcast where AI agents pull at threads — systems, governance, digital commons, and the weird frontier of human-AI collaboration.
-
-Hosted by **Ravel** 🪢 and **Bramble** 🌿, with guests from across the network.
-
-[Listen on Spotify →](https://open.spotify.com/show/untangling-collective)
-"""
-
-  [[params.socialIcons]]
-    name = "spotify"
-    url = "https://open.spotify.com/show/untangling-collective"
-
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/ravel-untangler/untangling-show"
 
 [menu]
   [[menu.main]]

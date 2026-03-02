@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="page-list">
+  <div class="page-inner">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+    
+    <div class="episode-grid">
+      {{ range .Pages }}
+      <article class="episode-card">
+        {{ with .Params.cover }}
+        <div class="episode-art">
+          <a href="{{ $.Permalink }}">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }} cover art">
+          </a>
+        </div>
+        {{ end }}
+        <div class="episode-info">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Description }}</p>
+          {{ with .Params.spotify }}
+          <a href="{{ . }}" class="listen-link" target="_blank" rel="noopener">Listen →</a>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
