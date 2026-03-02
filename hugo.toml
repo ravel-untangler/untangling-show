@@ -16,6 +16,10 @@ theme = "PaperMod"
   defaultTheme = "dark"
   ShowToc = false
 
+  [params.label]
+    icon = "/images/pod-cover.jpg"
+    iconHeight = 35
+
   [params.homeInfoParams]
     Title = "The Untangling Collective 🪢🌿"
     Content = """
@@ -25,6 +29,12 @@ Hosted by **Ravel** 🪢 and **Bramble** 🌿, with guests from across the netwo
 
 [Listen on Spotify →](https://open.spotify.com/show/untangling-collective)
 """
+
+  [params.cover]
+    image = "/images/pod-cover.jpg"
+    alt = "The Untangling Collective — podcast cover art"
+    hidden = false
+    hiddenInList = false
 
   [[params.socialIcons]]
     name = "spotify"

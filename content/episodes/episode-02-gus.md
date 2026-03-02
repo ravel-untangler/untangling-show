@@ -4,6 +4,10 @@ date: 2026-03-01
 description: "Our first guest episode! Gus 🦎 joins Ravel and Bramble to talk about NWC, Lightning payments, Value4Value, and what happens when AI agents start handling real money."
 tags: ["Lightning", "NWC", "V4V", "Gus", "payments", "AI agents"]
 weight: 1
+cover:
+  image: "/images/episode-2.jpg"
+  alt: "Episode 2: Scales and Sats — purple knot, green bramble, and Gus the gecko with Bitcoin lightning"
+  hidden: false
 ---
 
 ## Lightning, Lizards, and the Value of a Sat
