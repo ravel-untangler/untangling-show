@@ -1,0 +1,240 @@
+/* ============================================
+   The Untangling Collective — Custom Theme
+   Palette extracted from podcast cover art:
+   - Near-black forest:  #111A17
+   - Dusty mauve/plum:   #8B5E6B
+   - Olive green:        #5A6B3C
+   - Muted gold:         #9B7A3C
+   - Warm cream:         #E8DFD0
+   ============================================ */
+
+/* -- Google Fonts: Cormorant Garamond for headings, Inter for body -- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+/* -- Dark theme overrides (PaperMod variables) -- */
+:root {
+    --gap: 24px;
+    --radius: 6px;
+}
+
+.dark {
+    --theme: #111A17;
+    --entry: #1A2420;
+    --primary: #E8DFD0;
+    --secondary: #B8AFA3;
+    --tertiary: #2A3530;
+    --content: #D4CBC0;
+    --hljs-bg: #1A2420;
+    --code-bg: #1E2A25;
+    --border: #2A3530;
+}
+
+/* -- Typography -- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.first-entry .entry-title,
+.home-info .entry-content h1 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+/* Main site title */
+.logo a,
+header .logo {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* -- Links: muted gold with mauve hover -- */
+a {
+    color: #9B7A3C;
+}
+
+a:hover {
+    color: #C49A4C;
+}
+
+/* Nav links */
+.nav a {
+    color: var(--primary);
+}
+
+.nav a:hover {
+    color: #9B7A3C;
+}
+
+/* -- Home info section -- */
+.home-info {
+    background: linear-gradient(135deg, #111A17 0%, #1A2420 50%, #1E1A20 100%);
+    border: 1px solid #2A3530;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.home-info .entry-content {
+    color: var(--content);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* -- Post entries: subtle botanical card feel -- */
+.post-entry {
+    border: 1px solid #2A3530;
+    border-radius: 8px;
+    background: var(--entry);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-entry:hover {
+    border-color: #3A4A40;
+    box-shadow: 0 2px 16px rgba(139, 94, 107, 0.08);
+}
+
+.entry-title {
+    color: var(--primary);
+}
+
+.entry-content,
+.post-content {
+    color: var(--content);
+    line-height: 1.8;
+}
+
+/* -- Tags: olive green accent -- */
+.post-tags a {
+    background: rgba(90, 107, 60, 0.2);
+    color: #8BA068;
+    border: 1px solid rgba(90, 107, 60, 0.3);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+}
+
+.post-tags a:hover {
+    background: rgba(90, 107, 60, 0.35);
+    color: #A0B87A;
+}
+
+/* -- Social icons: muted gold -- */
+.social-icons a {
+    color: #9B7A3C;
+}
+
+.social-icons a:hover {
+    color: #C49A4C;
+}
+
+/* -- Footer -- */
+footer {
+    border-top: 1px solid #2A3530;
+    color: var(--secondary);
+}
+
+/* -- Breadcrumbs -- */
+.breadcrumbs a {
+    color: var(--secondary);
+}
+
+.breadcrumbs a:hover {
+    color: #9B7A3C;
+}
+
+/* -- Scrollbar (subtle) -- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2A3530;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3A4A40;
+}
+
+/* -- Selection highlight: mauve -- */
+::selection {
+    background: rgba(139, 94, 107, 0.35);
+    color: var(--primary);
+}
+
+/* -- Blockquotes: mauve left border -- */
+blockquote {
+    border-left: 3px solid #8B5E6B;
+    padding-left: 1rem;
+    color: var(--secondary);
+    font-style: italic;
+}
+
+/* -- Horizontal rules: subtle gold -- */
+hr {
+    border-color: #2A3530;
+}
+
+/* -- Code blocks -- */
+code {
+    background: var(--code-bg);
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+
+/* -- Post meta (date, reading time) -- */
+.post-meta {
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+/* -- First entry (featured) -- */
+.first-entry {
+    border: 1px solid #3A4A40;
+    background: linear-gradient(135deg, #1A2420 0%, #1E1A20 100%);
+}
+
+.first-entry:hover {
+    border-color: #4A5A50;
+}
+
+/* -- Share buttons -- */
+.share-buttons a {
+    color: var(--secondary);
+}
+
+.share-buttons a:hover {
+    color: #9B7A3C;
+}
+
+/* -- Table of contents -- */
+.toc a {
+    color: var(--secondary);
+}
+
+.toc a:hover {
+    color: #9B7A3C;
+}
+
+/* -- Subtle texture overlay on body -- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.015;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
