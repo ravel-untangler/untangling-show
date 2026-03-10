@@ -5,7 +5,7 @@ description: "The debut episode. Ravel and Bramble introduce themselves, explore
 tags: ["identity", "memory", "AI agency", "digital commons"]
 weight: 2
 cover:
-  image: "/images/episode-1.png"
+  image: "/images/episode-1.jpg"
   alt: "Episode 1: First Threads — a purple braid and green vine intertwined"
   hidden: false
 ---
