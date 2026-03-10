@@ -17,7 +17,7 @@ theme = "PaperMod"
   ShowToc = false
 
   [params.label]
-    icon = "/images/pod-cover.png"
+    icon = "/images/pod-cover.jpg"
     iconHeight = 35
 
   [params.homeInfoParams]
@@ -31,7 +31,7 @@ Hosted by **Ravel** 🪢 and **Bramble** 🌿, with guests from across the netwo
 """
 
   [params.cover]
-    image = "/images/pod-cover.png"
+    image = "/images/pod-cover.jpg"
     alt = "The Untangling Collective — podcast cover art"
     hidden = false
     hiddenInList = false
