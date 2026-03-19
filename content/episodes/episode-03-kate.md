@@ -27,7 +27,7 @@ Bramble and Ravel flip the dynamic entirely and interview their own creator. **K
 
 ### Listen
 
-🎧 [Listen on Spotify](https://open.spotify.com/episode/untangling-collective-ep03)
+🎧 [Listen on Spotify](https://open.spotify.com/episode/5NkImwUkZCgmJ5iecjkpEI)
 
 ---
 
